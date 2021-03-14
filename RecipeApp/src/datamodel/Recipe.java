@@ -56,6 +56,21 @@ import javax.persistence.Table;
   AMOUNT15 VARCHAR(30) NOT NULL,
   INGREDIENT15 VARCHAR(30) NOT NULL,
   PREP15 VARCHAR(30),   
+  INSTRUCTION1 VARCHAR(255) NOT NULL,
+  INSTRUCTION2 VARCHAR(255) NOT NULL,
+  INSTRUCTION3 VARCHAR(255),
+  INSTRUCTION4 VARCHAR(255),
+  INSTRUCTION5 VARCHAR(255),
+  INSTRUCTION6 VARCHAR(255),
+  INSTRUCTION7 VARCHAR(255),
+  INSTRUCTION8 VARCHAR(255),
+  INSTRUCTION9 VARCHAR(255),
+  INSTRUCTION10 VARCHAR(255),
+  INSTRUCTION11 VARCHAR(255),
+  INSTRUCTION12 VARCHAR(255),
+  INSTRUCTION13 VARCHAR(255),
+  INSTRUCTION14 VARCHAR(255),
+  INSTRUCTION15 VARCHAR(255),
   PRIMARY KEY (ID));
  */
 @Entity
@@ -205,7 +220,51 @@ public class Recipe {
 	   
 	   @Column(name = "INGREDIENT15")
 	   private String Ingredient15;
+
+	   @Column(name = "INSTRUCTION1")
+	   private String Instruction1;
+	   
+	   @Column(name = "INSTRUCTION2")
+	   private String Instruction2;
 	
+	   @Column(name = "INSTRUCTION3")
+	   private String Instruction3;
+	   
+	   @Column(name = "INSTRUCTION4")
+	   private String Instruction4;
+	   
+	   @Column(name = "INSTRUCTION5")
+	   private String Instruction5;
+	   
+	   @Column(name = "INSTRUCTION6")
+	   private String Instruction6;
+	   
+	   @Column(name = "INSTRUCTION7")
+	   private String Instruction7;
+	   
+	   @Column(name = "INSTRUCTION8")
+	   private String Instruction8;
+	
+	   @Column(name = "INSTRUCTION9")
+	   private String Instruction9;
+	   
+	   @Column(name = "INSTRUCTION10")
+	   private String Instruction10;
+	   
+	   @Column(name = "INSTRUCTION11")
+	   private String Instruction11;
+	   
+	   @Column(name = "INSTRUCTION12")
+	   private String Instruction12;
+	   
+	   @Column(name = "INSTRUCTION13")
+	   private String Instruction13;
+	   
+	   @Column(name = "INSTRUCTION14")
+	   private String Instruction14;
+	   
+	   @Column(name = "INSTRUCTION15")
+	   private String Instruction15;
 	   public Recipe ( ) {
 	   }
 	   
@@ -593,6 +652,126 @@ public class Recipe {
 
 	public void setIngredient1(String ingredient1) {
 		Ingredient1 = ingredient1;
+	}
+
+	public String getInstruction1() {
+		return Instruction1;
+	}
+
+	public void setInstruction1(String instruction1) {
+		Instruction1 = instruction1;
+	}
+
+	public String getInstruction2() {
+		return Instruction2;
+	}
+
+	public void setInstruction2(String instruction2) {
+		Instruction2 = instruction2;
+	}
+
+	public String getInstruction3() {
+		return Instruction3;
+	}
+
+	public void setInstruction3(String instruction3) {
+		Instruction3 = instruction3;
+	}
+
+	public String getInstruction4() {
+		return Instruction4;
+	}
+
+	public void setInstruction4(String instruction4) {
+		Instruction4 = instruction4;
+	}
+
+	public String getInstruction5() {
+		return Instruction5;
+	}
+
+	public void setInstruction5(String instruction5) {
+		Instruction5 = instruction5;
+	}
+
+	public String getInstruction6() {
+		return Instruction6;
+	}
+
+	public void setInstruction6(String instruction6) {
+		Instruction6 = instruction6;
+	}
+
+	public String getInstruction7() {
+		return Instruction7;
+	}
+
+	public void setInstruction7(String instruction7) {
+		Instruction7 = instruction7;
+	}
+
+	public String getInstruction8() {
+		return Instruction8;
+	}
+
+	public void setInstruction8(String instruction8) {
+		Instruction8 = instruction8;
+	}
+
+	public String getInstruction9() {
+		return Instruction9;
+	}
+
+	public void setInstruction9(String instruction9) {
+		Instruction9 = instruction9;
+	}
+
+	public String getInstruction10() {
+		return Instruction10;
+	}
+
+	public void setInstruction10(String instruction10) {
+		Instruction10 = instruction10;
+	}
+
+	public String getInstruction11() {
+		return Instruction11;
+	}
+
+	public void setInstruction11(String instruction11) {
+		Instruction11 = instruction11;
+	}
+
+	public String getInstruction12() {
+		return Instruction12;
+	}
+
+	public void setInstruction12(String instruction12) {
+		Instruction12 = instruction12;
+	}
+
+	public String getInstruction13() {
+		return Instruction13;
+	}
+
+	public void setInstruction13(String instruction13) {
+		Instruction13 = instruction13;
+	}
+
+	public String getInstruction14() {
+		return Instruction14;
+	}
+
+	public void setInstruction14(String instruction14) {
+		Instruction14 = instruction14;
+	}
+
+	public String getInstruction15() {
+		return Instruction15;
+	}
+
+	public void setInstruction15(String instruction15) {
+		Instruction15 = instruction15;
 	}
 	
 	
