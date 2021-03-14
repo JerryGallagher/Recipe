@@ -238,6 +238,362 @@ public class Recipe {
 	   public Integer getId() {
 		      return id;
 		   }
+
+	public String getAmount2() {
+		return Amount2;
+	}
+
+	public void setAmount2(String amount2) {
+		Amount2 = amount2;
+	}
+
+	public String getPrep2() {
+		return Prep2;
+	}
+
+	public void setPrep2(String prep2) {
+		Prep2 = prep2;
+	}
+
+	public String getIngredient2() {
+		return Ingredient2;
+	}
+
+	public void setIngredient2(String ingredient2) {
+		Ingredient2 = ingredient2;
+	}
+
+	public String getAmount3() {
+		return Amount3;
+	}
+
+	public void setAmount3(String amount3) {
+		Amount3 = amount3;
+	}
+
+	public String getPrep3() {
+		return Prep3;
+	}
+
+	public void setPrep3(String prep3) {
+		Prep3 = prep3;
+	}
+
+	public String getIngredient3() {
+		return Ingredient3;
+	}
+
+	public void setIngredient3(String ingredient3) {
+		Ingredient3 = ingredient3;
+	}
+
+	public String getAmount4() {
+		return Amount4;
+	}
+
+	public void setAmount4(String amount4) {
+		Amount4 = amount4;
+	}
+
+	public String getPrep4() {
+		return Prep4;
+	}
+
+	public void setPrep4(String prep4) {
+		Prep4 = prep4;
+	}
+
+	public String getIngredient4() {
+		return Ingredient4;
+	}
+
+	public void setIngredient4(String ingredient4) {
+		Ingredient4 = ingredient4;
+	}
+
+	public String getAmount5() {
+		return Amount5;
+	}
+
+	public void setAmount5(String amount5) {
+		Amount5 = amount5;
+	}
+
+	public String getPrep5() {
+		return Prep5;
+	}
+
+	public void setPrep5(String prep5) {
+		Prep5 = prep5;
+	}
+
+	public String getIngredient5() {
+		return Ingredient5;
+	}
+
+	public void setIngredient5(String ingredient5) {
+		Ingredient5 = ingredient5;
+	}
+
+	public String getAmount6() {
+		return Amount6;
+	}
+
+	public void setAmount6(String amount6) {
+		Amount6 = amount6;
+	}
+
+	public String getPrep6() {
+		return Prep6;
+	}
+
+	public void setPrep6(String prep6) {
+		Prep6 = prep6;
+	}
+
+	public String getIngredient6() {
+		return Ingredient6;
+	}
+
+	public void setIngredient6(String ingredient6) {
+		Ingredient6 = ingredient6;
+	}
+
+	public String getAmount7() {
+		return Amount7;
+	}
+
+	public void setAmount7(String amount7) {
+		Amount7 = amount7;
+	}
+
+	public String getPrep7() {
+		return Prep7;
+	}
+
+	public void setPrep7(String prep7) {
+		Prep7 = prep7;
+	}
+
+	public String getIngredient7() {
+		return Ingredient7;
+	}
+
+	public void setIngredient7(String ingredient7) {
+		Ingredient7 = ingredient7;
+	}
+
+	public String getAmount8() {
+		return Amount8;
+	}
+
+	public void setAmount8(String amount8) {
+		Amount8 = amount8;
+	}
+
+	public String getPrep8() {
+		return Prep8;
+	}
+
+	public void setPrep8(String prep8) {
+		Prep8 = prep8;
+	}
+
+	public String getIngredient8() {
+		return Ingredient8;
+	}
+
+	public void setIngredient8(String ingredient8) {
+		Ingredient8 = ingredient8;
+	}
+
+	public String getAmount9() {
+		return Amount9;
+	}
+
+	public void setAmount9(String amount9) {
+		Amount9 = amount9;
+	}
+
+	public String getPrep9() {
+		return Prep9;
+	}
+
+	public void setPrep9(String prep9) {
+		Prep9 = prep9;
+	}
+
+	public String getIngredient9() {
+		return Ingredient9;
+	}
+
+	public void setIngredient9(String ingredient9) {
+		Ingredient9 = ingredient9;
+	}
+
+	public String getAmount10() {
+		return Amount10;
+	}
+
+	public void setAmount10(String amount10) {
+		Amount10 = amount10;
+	}
+
+	public String getPrep10() {
+		return Prep10;
+	}
+
+	public void setPrep10(String prep10) {
+		Prep10 = prep10;
+	}
+
+	public String getIngredient10() {
+		return Ingredient10;
+	}
+
+	public void setIngredient10(String ingredient10) {
+		Ingredient10 = ingredient10;
+	}
+
+	public String getAmount11() {
+		return Amount11;
+	}
+
+	public void setAmount11(String amount11) {
+		Amount11 = amount11;
+	}
+
+	public String getPrep11() {
+		return Prep11;
+	}
+
+	public void setPrep11(String prep11) {
+		Prep11 = prep11;
+	}
+
+	public String getIngredient11() {
+		return Ingredient11;
+	}
+
+	public void setIngredient11(String ingredient11) {
+		Ingredient11 = ingredient11;
+	}
+
+	public String getAmount12() {
+		return Amount12;
+	}
+
+	public void setAmount12(String amount12) {
+		Amount12 = amount12;
+	}
+
+	public String getPrep12() {
+		return Prep12;
+	}
+
+	public void setPrep12(String prep12) {
+		Prep12 = prep12;
+	}
+
+	public String getIngredient12() {
+		return Ingredient12;
+	}
+
+	public void setIngredient12(String ingredient12) {
+		Ingredient12 = ingredient12;
+	}
+
+	public String getAmount13() {
+		return Amount13;
+	}
+
+	public void setAmount13(String amount13) {
+		Amount13 = amount13;
+	}
+
+	public String getPrep13() {
+		return Prep13;
+	}
+
+	public void setPrep13(String prep13) {
+		Prep13 = prep13;
+	}
+
+	public String getIngredient13() {
+		return Ingredient13;
+	}
+
+	public void setIngredient13(String ingredient13) {
+		Ingredient13 = ingredient13;
+	}
+
+	public String getAmount14() {
+		return Amount14;
+	}
+
+	public void setAmount14(String amount14) {
+		Amount14 = amount14;
+	}
+
+	public String getPrep14() {
+		return Prep14;
+	}
+
+	public void setPrep14(String prep14) {
+		Prep14 = prep14;
+	}
+
+	public String getIngredient14() {
+		return Ingredient14;
+	}
+
+	public void setIngredient14(String ingredient14) {
+		Ingredient14 = ingredient14;
+	}
+
+	public String getAmount15() {
+		return Amount15;
+	}
+
+	public void setAmount15(String amount15) {
+		Amount15 = amount15;
+	}
+
+	public String getPrep15() {
+		return Prep15;
+	}
+
+	public void setPrep15(String prep15) {
+		Prep15 = prep15;
+	}
+
+	public String getIngredient15() {
+		return Ingredient15;
+	}
+
+	public void setIngredient15(String ingredient15) {
+		Ingredient15 = ingredient15;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public void setRecipeName(String recipeName) {
+		RecipeName = recipeName;
+	}
+
+	public void setAmount1(String amount1) {
+		Amount1 = amount1;
+	}
+
+	public void setPrep1(String prep1) {
+		Prep1 = prep1;
+	}
+
+	public void setIngredient1(String ingredient1) {
+		Ingredient1 = ingredient1;
+	}
 	
 	
 }
