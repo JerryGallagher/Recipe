@@ -71,6 +71,7 @@ import javax.persistence.Table;
   INSTRUCTION13 VARCHAR(255),
   INSTRUCTION14 VARCHAR(255),
   INSTRUCTION15 VARCHAR(255),
+  IMAGE VARCHAR(60),
   PRIMARY KEY (ID));
  */
 @Entity
@@ -265,6 +266,9 @@ public class Recipe {
 	   
 	   @Column(name = "INSTRUCTION15")
 	   private String Instruction15;
+	   
+	   @Column(name = "IMAGE")
+	   private String Image;
 	   public Recipe ( ) {
 	   }
 	   
