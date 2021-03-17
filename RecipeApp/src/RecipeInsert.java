@@ -38,7 +38,7 @@ public class RecipeInsert extends HttpServlet implements Info {
             "<body bgcolor=\"#f0f0f0\">\n" + //
             "<h1 align=\"center\">" + title + "</h1>\n");
       out.println("<ul>");
-      out.println("<li> Recipe Name: " + recipename);
+      out.println("Recipe Name: " + recipename);
       out.println("<li> " + amount1 + " " + ingredient1 + " " + prep1);
       out.println("</ul>");
       out.println("<a href=/" + projectName + "/" + searchWebName + ">Search Data</a> <br>");

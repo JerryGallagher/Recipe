@@ -11,6 +11,7 @@ import javax.persistence.Table;
  CREATE TABLE RECIPE (
   id INT NOT NULL AUTO_INCREMENT,    
   RECIPE_NAME VARCHAR(30) NOT NULL,
+  RECIPE_DESC VARCHAR(255) NOT NULL,
   AMOUNT1 VARCHAR(30) NOT NULL,
   INGREDIENT1 VARCHAR(30) NOT NULL,
   PREP1 VARCHAR(30),  
@@ -75,7 +76,7 @@ import javax.persistence.Table;
   PRIMARY KEY (ID));
  */
 @Entity
-@Table(name = "MyEmployeeGallagher")
+@Table(name = "MyRecipe")
 public class Recipe {
 
 
@@ -86,6 +87,10 @@ public class Recipe {
 
 	   @Column(name = "RECIPE_NAME")
 	   private String RecipeName;
+	   
+	   @Column(name = "RECIPE_DESC")
+	   private String RecipeDesc;
+	   
 	
 	   @Column(name = "AMOUNT1")
 	   private String Amount1;
@@ -776,6 +781,22 @@ public class Recipe {
 
 	public void setInstruction15(String instruction15) {
 		Instruction15 = instruction15;
+	}
+
+	public String getRecipeDesc() {
+		return RecipeDesc;
+	}
+
+	public void setRecipeDesc(String recipeDesc) {
+		RecipeDesc = recipeDesc;
+	}
+
+	public String getImage() {
+		return Image;
+	}
+
+	public void setImage(String image) {
+		Image = image;
 	}
 	
 	
