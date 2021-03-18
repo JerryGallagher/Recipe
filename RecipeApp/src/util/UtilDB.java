@@ -87,7 +87,7 @@ public class UtilDB {
    }
    
 
-   public static void createRecipes(String recipename,String amount1, String ingredient1, String prep1) {
+   public static void createRecipes(String recipename, String recipedesc, String image, String amount1, String ingredient1, String prep1) {
       Session session = getSessionFactory().openSession();
       Transaction tx = null;
       try {

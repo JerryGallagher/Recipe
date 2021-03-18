@@ -21,11 +21,13 @@ public class RecipeInsert extends HttpServlet implements Info {
 
    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       String recipename = request.getParameter("recipename").trim();
+      String recipedesc = request.getParameter("recipedesc").trim();
+      String image = request.getParameter("image").trim();
       String amount1 = request.getParameter("amount1").trim();
       String ingredient1 = request.getParameter("ingredient1").trim();
       String prep1 = request.getParameter("prep1").trim();
       
-      UtilDB.createRecipes(recipename, amount1, ingredient1, prep1);
+      UtilDB.createRecipes(recipename, recipedesc, image, amount1, ingredient1, prep1);
       
 
       response.setContentType("text/html");

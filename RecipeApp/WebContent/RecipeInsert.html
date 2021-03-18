@@ -28,12 +28,17 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
   </div>
 </div>
 <div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
-	<div>
-		<h1>User Input</h1>
-	
-		<form action="RecipeInsert" method="POST">
-	
+	<div class="w3-row-padding w3-padding-16 w3-center">
+    
+			
+		<form action="RecipeInsert" method="POST" enctype="multipart/form-data">
+			
 			Recipe Name: <input type="text" name="recipename"> <br />
+			Recipe Desc: <input type="text" name="recipedesc" value="Short Description of Recipe"></br>
+			<p>Image file for your recipe</p>
+			<p><input type="file" name="fileToUpload"><p>
+			
+			
 			<label for="ingredient1"></label>Ingredient: <input type="text" name="amount1" value="Quantity"> 
 			<input type="text" name="ingredient1" value="Ingredient">
 			<input type="text" name="prep1" value="Preparation">
@@ -41,8 +46,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 		
 			<input type="submit" value="Submit" />
 		</form>
-
 	</div>
+	
 
 <!-- Footer -->
   <footer class="w3-row-padding w3-padding-32">

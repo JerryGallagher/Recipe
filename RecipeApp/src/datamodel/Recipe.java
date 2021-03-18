@@ -291,6 +291,17 @@ public class Recipe {
 		    this.Ingredient1 = ingredient1;
 		    this.Prep1 = prep1;
 		   }
+	   
+	   public Recipe( String recipename,String recipedesc, String image, String amount1, String ingredient1, String prep1) {
+		   	this.id = id;
+		    this.RecipeName = recipename;
+		    this.RecipeDesc = recipedesc;
+		    this.Image = image;
+		    this.Amount1 = amount1;
+		    this.Ingredient1 = ingredient1;
+		    this.Prep1 = prep1;
+		   }
+	   
 	   public String getRecipeName() {
 		      return RecipeName;
 		   }

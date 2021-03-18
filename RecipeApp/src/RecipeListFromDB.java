@@ -37,16 +37,19 @@ public class RecipeListFromDB extends HttpServlet {
 	      List<String> contents = UtilFile.readFile(getServletContext(), filename);
 	      
 	      PrintWriter out = response.getWriter();
-	              
+	      
+			      
 	      for (String iLine : contents) {
 		         System.out.println(iLine);
 		         StringTokenizer st1 = new StringTokenizer(iLine,","); 
 		         String recipename=(st1.nextToken()); //very bad and trusting
+		         String recipedesc=(st1.nextToken());
+		         String image=(st1.nextToken());
 		         String amount1=(st1.nextToken()); 
 		         String ingredient1=(st1.nextToken());
 		         String prep1=(st1.nextToken());
 	        	        
-	        UtilDB.createRecipes(recipename, amount1, ingredient1, prep1);
+	        UtilDB.createRecipes(recipename, recipedesc, image, amount1, ingredient1, prep1);
 	        	       	        
 	      }
 	      String title = "Answer to question 2 Database Result";
