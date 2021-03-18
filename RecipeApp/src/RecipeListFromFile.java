@@ -49,11 +49,14 @@ public class RecipeListFromFile extends HttpServlet {
 	         System.out.println(iLine);
 	         StringTokenizer st1 = new StringTokenizer(iLine,","); 
 	         String RecipeName=(st1.nextToken()); //very bad and trusting
+	         String RecipeDesc=(st1.nextToken());
+	         String Image=(st1.nextToken());
 	         String Amount1=(st1.nextToken()); 
 	         String Ingredient1=(st1.nextToken());
 	         String Prep1=(st1.nextToken());
 	        	        
-	        out.println(RecipeName + ", " + Amount1 + ", " + Ingredient1 + ", " + Prep1 + "<br>" );
+	        out.println(RecipeName + ", " + RecipeDesc + ", " +  Amount1 + ", " + Ingredient1 + ", " + Prep1 + "<br>" );
+	        out.println("<img src=\""+Image+"\" alt=\"Popsicle\" style=\"width:100%\">");
 	      }
 	      out.println("</body></html>");
 	      
