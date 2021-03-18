@@ -54,7 +54,7 @@ public class FileUploadServlet extends HttpServlet {
 		//create output HTML that uses the 
 		response.getOutputStream().println("<p>Thanks " + name + "! Here's a link to your uploaded file:</p>");
 		response.getOutputStream().println("<p><a href=\"" + fileUrl + "\">" + fileUrl + "</a></p>");
-		response.getOutputStream().println("<p>Upload another file <a href=\"http://localhost:8080/index.html\">here</a>.</p>");	
+		response.getOutputStream().println("<p>Upload another file <a href=/RecipeApp/FileUpload.html>here</a>.</p>");	
 		}
 
 	private static String getSubmittedFileName(Part part) {
