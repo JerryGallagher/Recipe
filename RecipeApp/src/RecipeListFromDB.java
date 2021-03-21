@@ -52,7 +52,7 @@ public class RecipeListFromDB extends HttpServlet {
 	        UtilDB.createRecipes(recipename, recipedesc, image, amount1, ingredient1, prep1);
 	        	       	        
 	      }
-	      String title = "Answer to question 2 Database Result";
+	      String title = "Database Result";
 	      String docType = "<!doctype html public \"-//w3c//dtd html 4.0 " + //
 	              "transitional//en\">\n"; //
 	        out.println(docType + //
@@ -65,6 +65,8 @@ public class RecipeListFromDB extends HttpServlet {
 	      for (Recipe recipe : listRecipes) {
 	    	  out.println("<li>" + recipe.getId() + ", " //
 	               + recipe.getRecipeName() + ", " //
+	               + recipe.getRecipeDesc() + "," //
+	               + recipe.getImage() + ","  //
 	               + recipe.getAmount1() + ", " //
 	               + recipe.getIngredient1() + ", " //
 	               + recipe.getPrep1() + "</li>");

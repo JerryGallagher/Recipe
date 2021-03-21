@@ -37,14 +37,16 @@ public class RecipeListFromFile extends HttpServlet {
 	      PrintWriter out = response.getWriter();
 	      
 	      String title = "Recipe List From File";
-	      String docType = "<!doctype html public \"-//w3c//dtd html 4.0 " + //
-	              "transitional//en\">\n"; //
-	        out.println(docType + //
+	      String docType = "<!DOCTYPE html>";
+	      out.println(docType + //
 	              "<html>\n" + //
 	              "<head><title>" + title + "</title></head>\n" + //
 	              "<body bgcolor=\"#f0f0f0\">\n" + //
 	              "<h1 align=\"center\">" + title + "</h1>\n");
-	        
+	        out.println("<div class=\"w3-main w3-content w3-padding\" style=\"max-width:1200px;margin-top:100px\">");
+	        out.println("<!-- First Photo Grid-->");
+	        out.println("<div class=\"w3-row-padding w3-padding-16 w3-center\" id=\"food\">");
+	        int iterator_for_end_div=0;
 	      for (String iLine : contents) {
 	         System.out.println(iLine);
 	         StringTokenizer st1 = new StringTokenizer(iLine,","); 
@@ -55,9 +57,20 @@ public class RecipeListFromFile extends HttpServlet {
 	         String Ingredient1=(st1.nextToken());
 	         String Prep1=(st1.nextToken());
 	        	        
-	        out.println(RecipeName + ", " + RecipeDesc + ", " +  Amount1 + ", " + Ingredient1 + ", " + Prep1 + "<br>" );
-	        out.println("<img src=\""+Image+"\" alt=\"Popsicle\" style=\"width:100%\">");
+	        //out.println(RecipeName + ", " + RecipeDesc + ", " +  Amount1 + ", " + Ingredient1 + ", " + Prep1 + "<br>" );
+	        //out.println("<img src=\""+Image+"\" alt=\""+Image+"\" style=\"width:100%\">");
+	        out.println("<div class=\"w3-quarter\">" //
+	                + "<img src=\""+Image+"\" alt=\""+Image+"\" style=\"width:100%\">" //
+	                + "<h3>"+RecipeName+"</h3>" //
+	                + "<p>"+RecipeDesc + "</p>" //
+	                + "</div>");
+	     	  iterator_for_end_div++;
+	     	  if (iterator_for_end_div%4==0)
+	     			  { out.println("</div> "); 
+	     			  out.println("<div class=\"w3-row-padding w3-padding-16 w3-center\">" ); }
 	      }
+	      out.println("</div>");
+	      out.println("</div>");
 	      out.println("</body></html>");
 	      
 	   }

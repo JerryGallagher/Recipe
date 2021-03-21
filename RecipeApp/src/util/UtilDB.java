@@ -92,7 +92,7 @@ public class UtilDB {
       Transaction tx = null;
       try {
          tx = session.beginTransaction();
-         session.save(new Recipe(recipename, amount1, ingredient1, prep1));
+         session.save(new Recipe(recipename, recipedesc, image, amount1, ingredient1, prep1));
          tx.commit();
       } catch (HibernateException e) {
          if (tx != null)
