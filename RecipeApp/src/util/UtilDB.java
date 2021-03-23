@@ -9,11 +9,13 @@ import java.util.Iterator;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.Projections;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
 
 import datamodel.Recipe;
 
+import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -58,6 +60,46 @@ public class UtilDB {
       }
       return resultList;
    }
+   public static List<Recipe> listRecipes(int start,int pageSize){  
+       List<Recipe> list = new ArrayList<Recipe>();  
+       
+       Session session = getSessionFactory().openSession();
+       Transaction tx = null;  // each process needs transaction and commit the changes in DB.
+       
+       try{  
+    	   tx = session.beginTransaction();  
+    	   Criteria criteria = session.createCriteria(Recipe.class);
+    	   criteria.setFirstResult(start);
+    	   criteria.setMaxResults(pageSize);
+    	   list = criteria.list();
+    	   
+       }catch(Exception e){System.out.println(e);}  
+       return list;  
+   } 
+   
+   public static long countRecipesPages(int pageSize){  
+	   List<Recipe> resultList = new ArrayList<Recipe>();
+	   long count = 0;
+	   
+	   Session session = getSessionFactory().openSession();
+	   Transaction tx = null;  // each process needs transaction and commit the changes in DB.
+
+	      try {
+	         tx = session.beginTransaction();
+	         Criteria criteriaCount = session.createCriteria(Recipe.class);
+	         criteriaCount.setProjection(Projections.rowCount());
+	         count = (long) criteriaCount.uniqueResult();    	                        
+	         
+	         tx.commit();
+       		}catch(Exception e){
+       			System.out.println(e);
+       		}
+       		finally {
+	         session.close();
+       		}  
+       		return count/pageSize;
+   }   
+   
    public static List<Recipe> listRecipes(String keyword) {
 	   List<Recipe> resultList = new ArrayList<Recipe>();
 	
@@ -80,9 +122,6 @@ public class UtilDB {
 	      } finally {
 	         session.close();
 	      }
-	   
-	   
-	   
 	   return resultList;
    }
    
@@ -101,5 +140,7 @@ public class UtilDB {
       } finally {
          session.close();
       }
-   }
-}
+   }//end of public static void createRecipes
+}//end of UtilDB
+
+

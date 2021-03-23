@@ -90,7 +90,7 @@ public class Index extends HttpServlet {
       out.println("<div class=\"w3-center w3-padding-32\">");
       out.println("<div class=\"w3-bar\">");
       out.println("<a href=\"#\" class=\"w3-bar-item w3-button w3-hover-black\">«</a>");
-      out.println("<a href=\"#\" class=\"w3-bar-item w3-black w3-button\">1</a>");
+      out.println("<a href=\"?page=1\" class=\"w3-bar-item w3-black w3-button\">1</a>");
       out.println("<a href=\"#\" class=\"w3-bar-item w3-button w3-hover-black\">2</a>");
       out.println("<a href=\"#\" class=\"w3-bar-item w3-button w3-hover-black\">3</a>");
       out.println("<a href=\"#\" class=\"w3-bar-item w3-button w3-hover-black\">4</a>");
