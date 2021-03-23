@@ -69,7 +69,6 @@ public class Pagination extends HttpServlet {
             {
             pageid=1;
             }
-            
             out.println("<a href=\"?page="+(pageid-1 > 1 ? pageid -1 : 1 )  + "\" class=\"w3-bar-item w3-button w3-hover-black\">«</a>");
             long noOfPages=UtilDB.countRecipesPages(pageSize);
             for(long i=1;i<=noOfPages;i++)
@@ -77,9 +76,8 @@ public class Pagination extends HttpServlet {
             out.println("<a href=\"?page="+i+"\" class=\"w3-bar-item w3-button w3-hover-black\">"+i+"</a>");
             }
             out.println("<a href=\"?page="+(pageid+1 < noOfPages ? pageid+1 : noOfPages)  + "\" class=\"w3-bar-item w3-button w3-hover-black\">»</a>");
-          //ugly logic pageid+1 unless pageid > noOfPages then equals noOfPages
             out.println("</div>");  
-            //out.print("<a href='Pagination?page=1'>1</a> ");  
+            
               
               
             out.close();  

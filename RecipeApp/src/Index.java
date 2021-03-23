@@ -38,6 +38,22 @@ public class Index extends HttpServlet {
    // Allocate a output writer to write the response message into the network socket
    PrintWriter out = response.getWriter();
 
+   int pageid;
+   if (request.getParameter("page")!= null)
+   {String spageid=request.getParameter("page");
+   pageid=Integer.parseInt(spageid); 
+   }
+   else
+   {
+   pageid=1;
+   }
+   int pageSize=8;  
+   if(pageid==1){}  
+   else{  
+       pageid=pageid-1;  
+       pageid=pageid*pageSize+1;  
+   } 
+   
    // Write the response message, in an HTML page
    try {
       out.println("<!DOCTYPE html>");
@@ -69,7 +85,7 @@ public class Index extends HttpServlet {
  
       out.println("<!-- First Photo Grid-->");
       out.println("<div class=\"w3-row-padding w3-padding-16 w3-center\" id=\"food\">");
-      List<Recipe> listRecipes = UtilDB.listRecipes();
+      List<Recipe> listRecipes = UtilDB.listRecipes(pageid-1,pageSize);
       int iterator_for_end_div=0;
       for (Recipe recipe : listRecipes)
        {
@@ -89,15 +105,24 @@ public class Index extends HttpServlet {
       out.println("<!-- Pagination -->");
       out.println("<div class=\"w3-center w3-padding-32\">");
       out.println("<div class=\"w3-bar\">");
-      out.println("<a href=\"#\" class=\"w3-bar-item w3-button w3-hover-black\">«</a>");
-      out.println("<a href=\"?page=1\" class=\"w3-bar-item w3-black w3-button\">1</a>");
-      out.println("<a href=\"#\" class=\"w3-bar-item w3-button w3-hover-black\">2</a>");
-      out.println("<a href=\"#\" class=\"w3-bar-item w3-button w3-hover-black\">3</a>");
-      out.println("<a href=\"#\" class=\"w3-bar-item w3-button w3-hover-black\">4</a>");
-      out.println("<a href=\"#\" class=\"w3-bar-item w3-button w3-hover-black\">»</a>");
-      out.println("</div>");
-      out.println("</div>");
-      //out.println("<body>"); 
+      if (request.getParameter("page")!= null)
+      {String spageid=request.getParameter("page");
+      pageid=Integer.parseInt(spageid); 
+      }
+      else
+      {
+      pageid=1;
+      }
+      out.println("<a href=\"?page="+(pageid-1 > 1 ? pageid -1 : 1 )  + "\" class=\"w3-bar-item w3-button w3-hover-black\">«</a>");
+      long noOfPages=UtilDB.countRecipesPages(pageSize);
+      for(long i=1;i<=noOfPages;i++)
+      {
+      out.println("<a href=\"?page="+i+"\" class=\"w3-bar-item w3-button w3-hover-black\">"+i+"</a>");
+      }
+      out.println("<a href=\"?page="+(pageid+1 < noOfPages ? pageid+1 : noOfPages)  + "\" class=\"w3-bar-item w3-button w3-hover-black\">»</a>");
+      out.println("</div>"); 
+      
+      
       out.println(" <!-- Footer -->");
       out.println("<footer class=\"w3-row-padding w3-padding-32\">");
       out.println("<div class=\"w3-third\">");
