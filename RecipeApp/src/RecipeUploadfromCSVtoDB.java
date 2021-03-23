@@ -17,13 +17,13 @@ import util.UtilFile;
  * Servlet implementation class MyServletHibernate0309Gallagher
  */
 @WebServlet("/RecipeListFromDB")
-public class RecipeListFromDB extends HttpServlet {
+public class RecipeUploadfromCSVtoDB extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public RecipeListFromDB() {
+    public RecipeUploadfromCSVtoDB() {
         super();
         // TODO Auto-generated constructor stub
     }
