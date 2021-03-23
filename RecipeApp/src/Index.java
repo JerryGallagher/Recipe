@@ -2,12 +2,16 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import datamodel.Recipe;
+import util.UtilDB;
 
 /**
  * Servlet implementation class Index
@@ -62,56 +66,26 @@ public class Index extends HttpServlet {
       out.println("</div>");  
       
       out.println("<div class=\"w3-main w3-content w3-padding\" style=\"max-width:1200px;margin-top:100px\">");
-      
+ 
       out.println("<!-- First Photo Grid-->");
       out.println("<div class=\"w3-row-padding w3-padding-16 w3-center\" id=\"food\">");
-      out.println("<div class=\"w3-quarter\">");
-      out.println("<img src=\"Images/Brazilian-Fish-Stew.jpg\" alt=\"Sandwich\" style=\"width:100%\">");
-      out.println("<h3>The Perfect Sandwich, A Real NYC Classic</h3>");
-      out.println("<p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>");
+      List<Recipe> listRecipes = UtilDB.listRecipes();
+      int iterator_for_end_div=0;
+      for (Recipe recipe : listRecipes)
+       {
+    	  out.println("<div class=\"w3-quarter\">" //
+               + "<img src=\""+recipe.getImage()+"\" alt=\""+recipe.getImage()+"\" style=\"width:100%\">" //
+               + "<h3>"+recipe.getRecipeName()+"</h3>" //
+               + "<p>"+ recipe.getRecipeDesc() + "</p>" //
+               + "</div>");
+    	  iterator_for_end_div++;
+    	  if (iterator_for_end_div%4==0)
+    			  { out.println("</div> "); 
+    			  out.println("<div class=\"w3-row-padding w3-padding-16 w3-center\">" ); }
+      }
+     
       out.println("</div>");
-      out.println("<div class=\"w3-quarter\">");
-      out.println("<img src=\"Images/Beef-and-Broccoli.jpg\" alt=\"Steak\" style=\"width:100%\">");
-      out.println("<h3>Let Me Tell You About This Steak</h3>");
-      out.println("<p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>");
-      out.println("</div>");
-      out.println("<div class=\"w3-quarter\">");
-      out.println("<img src=\"Images/Creamy-Beef-Stroganoff.jpg\" alt=\"Cherries\" style=\"width:100%\">");
-      out.println("<h3>Cherries, interrupted</h3>");
-      out.println("<p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>");
-      out.println("<p>What else?</p>");
-      out.println("</div>");
-      out.println("<div class=\"w3-quarter\">");      
-      out.println("<img src=\"Images/Cucumber-tomato-avocado-salad.jpg\" alt=\"Pasta and Wine\" style=\"width:100%\">");
-      out.println("<h3>Once Again, Robust Wine and Vegetable Pasta</h3>");
-      out.println("<p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>");
-      out.println("</div>");
-      out.println("</div>");
-        
-      out.println("<!-- Second Photo Grid-->");
-      out.println("<div class=\"w3-row-padding w3-padding-16 w3-center\">");
-      out.println("<div class=\"w3-quarter\">");
-      out.println("<img src=\"Images/Brazilian-Fish-Stew.jpg\" alt=\"Popsicle\" style=\"width:100%\">");
-      out.println("<h3>All I Need Is a Popsicle</h3>");
-      out.println("<p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>");
-      out.println("</div>");
-      out.println("<div class=\"w3-quarter\">");
-      out.println("<img src=\"Images/Beef-and-Broccoli.jpg\" alt=\"Steak\" style=\"width:100%\">");
-      out.println("<h3>Salmon For Your Skin</h3>");
-      out.println("<p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>");
-      out.println("</div>");
-      out.println("<div class=\"w3-quarter\">");
-      out.println("<img src=\"Images/Creamy-Beef-Stroganoff.jpg\" alt=\"Cherries\" style=\"width:100%\">");
-      out.println("<h3>The Perfect Sandwich, A Real Classic</h3>");
-      out.println("<p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>");
-      out.println("</div>");
-      out.println("<div class=\"w3-quarter\">");
-      out.println("<img src=\"Images/Cucumber-tomato-avocado-salad.jpg\" alt=\"Pasta and Wine\" style=\"width:100%\">");
-      out.println("<h3>Le French</h3>");
-      out.println("<p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>");
-      out.println("</div>");
-      out.println("</div>");
-      
+         
       out.println("<!-- Pagination -->");
       out.println("<div class=\"w3-center w3-padding-32\">");
       out.println("<div class=\"w3-bar\">");
