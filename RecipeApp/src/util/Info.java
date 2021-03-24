@@ -21,6 +21,7 @@ public interface Info {
    out.println("<style>");
    out.println("body,h1,h2,h3,h4,h5,h6 {font-family: \"Karma\", sans-serif}");
    out.println(".w3-bar-block .w3-bar-item {padding:20px}");
+   out.println(" a:visited { text-decoration: none; color: inherit; // from parent element }");
    out.println("</style>");
    out.println("<body>");
    out.println("<nav class=\"w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left\" style=\"display:none;z-index:2;width:25%;min-width:300px\" id=\"mySidebar\">");  
@@ -31,7 +32,6 @@ public interface Info {
    out.println("<div class=\"w3-top\">");
    out.println("<div class=\"w3-white w3-xlarge\" style=\"max-width:1200px;margin:auto\">");
    out.println("<div class=\"w3-button w3-padding-16 w3-left\" onclick=\"w3_open()\"><img src=Images/menu.jpg alt=menu style=\"width:30px\"></div>");
-   //"<img src=\""+recipe.getImage()+"\" alt=\""+recipe.getImage()+"\" style=\"width:100%\">"
    out.println("<div class=\"w3-right w3-padding-16\"><a href=/" + projectName + "/" + searchWebName + ">Search</a></div>");
    out.println("<div class=\"w3-center w3-padding-16\"><a href=\"/RecipeApp/Index\">Recipes</a></div>");
    out.println("</div>");  
