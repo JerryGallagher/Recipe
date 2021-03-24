@@ -106,24 +106,33 @@ public class RecipeInsert extends HttpServlet implements Info {
 
       response.setContentType("text/html");
       PrintWriter out = response.getWriter();
-      String title = "Database Information Inserted";
-      String docType = "<!doctype html\">\n"; //
-      out.println(docType + //
-            "<html>\n" + //
-            "<head><title>" + title + "</title></head>\n" + //
-            "<body bgcolor=\"#f0f0f0\">\n" + //
-            "<h1 align=\"center\">" + title + "</h1>\n");
-      out.println("<ul>");
-      out.println("Recipe Name: " + recipename);
-      out.println("" + recipedesc);
-      out.println("<img src=\"" +image+ "\" alt=\"" +image+ "\" style=\"width:60%\">" );
-      out.println("<li> " + amount1 + " " + ingredient1 + " " + prep1);
-      out.println("</ul>");
-      out.println("<a href=/" + projectName + "/" + searchWebName + ">Search Data</a> <br>");
-      out.println("</body></html>");
-   }
+      try {
+          header(out);
+          
+          out.println("<div class=\"w3-main w3-content w3-padding\" style=\"max-width:1200px;margin-top:100px\">");
+          out.println("<div class=\"w3-container w3-padding-32 w3-center\">");
+          out.println("<h1 align=\"center\">\"Database Information Inserted\"</h1>\n");
+          out.println("<ul>");
+          out.println("Recipe Name: " + recipename);
+          out.println("" + recipedesc);
+          out.println("<img src=\"" +image+ "\" alt=\"" +image+ "\" style=\"width:60%\">" );
+          out.println("<li> " + amount1 + " " + ingredient1 + " " + prep1);
+          out.println("</ul>");
+          out.println("<a href=/" + projectName + "/" + searchWebName + ">Search Data</a> <br>");
+		  out.println("</div> ");
+	      out.println("</div> ");
+		     
+      footer(out);
+   
+      } finally {
+       out.close();  //close the output writer
+      }
+   }//end of doGet
+
 
    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       doGet(request, response);
    }
+              
+
 }

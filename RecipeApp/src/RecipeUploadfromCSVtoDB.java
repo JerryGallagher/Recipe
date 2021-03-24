@@ -12,12 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 import datamodel.Recipe;
 import util.UtilDB;
 import util.UtilFile;
+import util.Info;
 
 /**
  * Servlet implementation class MyServletHibernate0309Gallagher
  */
 @WebServlet("/RecipeListFromDB")
-public class RecipeUploadfromCSVtoDB extends HttpServlet {
+public class RecipeUploadfromCSVtoDB extends HttpServlet implements Info {
 	private static final long serialVersionUID = 1L;
 
     /**
@@ -128,14 +129,9 @@ public class RecipeUploadfromCSVtoDB extends HttpServlet {
 	    		     Instruction11, Instruction12, Instruction13, Instruction14, Instruction15 );
 	        	       	        
 	      }
-	      String title = "Database Result";
-	      String docType = "<!doctype html public \"-//w3c//dtd html 4.0 " + //
-	              "transitional//en\">\n"; //
-	        out.println(docType + //
-	              "<html>\n" + //
-	              "<head><title>" + title + "</title></head>\n" + //
-	              "<body bgcolor=\"#f0f0f0\">\n" + //
-	              "<h1 align=\"center\">" + title + "</h1>\n");
+	      try {
+	    	  header(out);
+	      
 	     
 	        List<Recipe> listRecipes = UtilDB.listRecipes();
 	      for (Recipe recipe : listRecipes) {
@@ -147,10 +143,11 @@ public class RecipeUploadfromCSVtoDB extends HttpServlet {
 	               + recipe.getIngredient1() + ", " //
 	               + recipe.getPrep1() + "</li>");
 	      }
-	  
-	      out.println("</body></html>");
-	      
-	   }
+	      footer(out);
+	      } finally {
+	          out.close();  //close the output writer
+	      }
+	}//end of doGet
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
