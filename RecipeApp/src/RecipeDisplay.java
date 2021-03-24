@@ -21,24 +21,31 @@ public class RecipeDisplay extends HttpServlet implements Info {
    }
 
    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-      String keyword = request.getParameter("keyword").trim();
-
+	   Integer id;
+	   if (request.getParameter("id")!= null)
+       {String sid=request.getParameter("id");
+       id = Integer.parseInt(sid);
+       }
+       else
+       {
+       id = 0;
+       }
+	   
       response.setContentType("text/html");
       PrintWriter out = response.getWriter();
-      String title = "Database Result";
       String docType = "<!doctype html public \"-//w3c//dtd html 4.0 transitional//en\">\n"; //
       out.println(docType + //
             "<html>\n" + //
-            "<head><title>" + title + "</title></head>\n" + //
-            "<body bgcolor=\"#f0f0f0\">\n" + //
-            "<h1 align=\"center\">" + title + "</h1>\n");
-      out.println("<ul>");
+            "<head><title>Recipe</title></head>\n" + //
+            "<body bgcolor=\"#f0f0f0\">\n" ); //
+            
+
 
       List<Recipe> listRecipes = null;
-      if (keyword != null && !keyword.isEmpty()) {
-         listRecipes = UtilDB.listRecipes(keyword);
+      if (id != null && id != 0) {
+         listRecipes = UtilDB.listRecipes(id);
       } else {
-         listRecipes = UtilDB.listRecipes();
+    	  response.sendRedirect("/" + projectName + "/" + homeWebname );
       }
       display(listRecipes, out);
       out.println("</ul>");
@@ -53,11 +60,11 @@ public class RecipeDisplay extends HttpServlet implements Info {
 	               + recipe.getIngredient1() + ", " //
 	               + recipe.getPrep1());
 
-         out.println("<li>" + recipe.getId() + ", " //
-	               + recipe.getRecipeName() + ", " //
+         out.println("<p>" + recipe.getId() + ", " //
+        		 + "<h1 align=\"center\">" + recipe.getRecipeName() + "</h1>\n" //
 	               + recipe.getAmount1() + ", " //
 	               + recipe.getIngredient1() + ", " //
-	               + recipe.getPrep1() + "</li>");
+	               + recipe.getPrep1() );
          
     
       }

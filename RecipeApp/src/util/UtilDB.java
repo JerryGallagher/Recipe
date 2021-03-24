@@ -124,6 +124,30 @@ public class UtilDB {
 	      }
 	   return resultList;
    }
+   public static List<Recipe> listRecipes(Integer id) {
+	   List<Recipe> resultList = new ArrayList<Recipe>();
+	
+	   Session session = getSessionFactory().openSession();
+	   Transaction tx = null; 
+	   
+	   try {
+	         tx = session.beginTransaction();
+	         List<?> recipes = session.createQuery("FROM Recipe").list();
+	         for (Iterator<?> iterator = recipes.iterator(); iterator.hasNext();) {
+	        	 Recipe recipe = (Recipe) iterator.next();
+	        	 if (recipe.getId().equals(id))
+	        		 resultList.add(recipe);
+	         }
+	         tx.commit();
+	      } catch (HibernateException e) {
+	         if (tx != null)
+	            tx.rollback();
+	         e.printStackTrace();
+	      } finally {
+	         session.close();
+	      }
+	   return resultList;
+   }
    
 
    public static void createRecipes(String recipename, String recipedesc, String image, String amount1, String ingredient1, String prep1) {

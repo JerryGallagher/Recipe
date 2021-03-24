@@ -12,12 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 
 import datamodel.Recipe;
 import util.UtilDB;
+import util.Info;
 
 /**
  * Servlet implementation class Index
  */
 @WebServlet("/Index")
-public class Index extends HttpServlet {
+public class Index extends HttpServlet implements Info{
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -91,7 +92,9 @@ public class Index extends HttpServlet {
        {
     	  out.println("<div class=\"w3-quarter\">" //
                + "<img src=\""+recipe.getImage()+"\" alt=\""+recipe.getImage()+"\" style=\"width:100%\">" //
-               + "<h3>"+recipe.getRecipeName()+"</h3>" //
+               + "<h3>"
+               +"<a href=/" + projectName + "/" + displayWebname + "?id=" +recipe.getId() + ">"
+               +recipe.getRecipeName()+ "</a> " + "</h3>"  //("<a href=/" + projectName + "/" + searchWebName + ">Search Data</a> <br>");
                + "<p>"+ recipe.getRecipeDesc() + "</p>" //
                + "</div>");
     	  iterator_for_end_div++;
