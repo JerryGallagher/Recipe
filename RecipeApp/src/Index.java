@@ -72,7 +72,7 @@ public class Index extends HttpServlet implements Info{
       out.println("<nav class=\"w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left\" style=\"display:none;z-index:2;width:40%;min-width:300px\" id=\"mySidebar\">");  
       out.println("<a href=\"javascript:void(0)\" onclick=\"w3_close()\" class=\"w3-bar-item w3-button\">Close Menu</a>");  
       out.println("<a href=\"#food\" onclick=\"w3_close()\" class=\"w3-bar-item w3-button\">Food</a>");  
-      out.println("<a href=\"#about\" onclick=\"w3_close()\" class=\"w3-bar-item w3-button\">About</a>");  
+      out.println("<a href=\"/RecipeApp/About\" onclick=\"w3_close()\" class=\"w3-bar-item w3-button\">About</a>");  
       out.println("</nav>");
       out.println("<div class=\"w3-top\">");
       out.println("<div class=\"w3-white w3-xlarge\" style=\"max-width:1200px;margin:auto\">");
