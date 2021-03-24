@@ -71,28 +71,10 @@ public class RecipeDisplay extends HttpServlet implements Info {
       }
       display(listRecipes, out);
       
-      out.println("</body></html>");
-      out.println(" <!-- Footer -->");
-      out.println("<footer class=\"w3-row-padding w3-padding-32\">");
-      out.println("<div class=\"w3-third\">");
-      out.println("<h3>FOOTER</h3>");
-      out.println("<p>A simple recipe display site.</p>");
-      out.println("<p>Parts Borrowed from <a href=\"https://www.w3schools.com/w3css/default.asp\" target=\"_blank\">w3.css</a></p>");
-      out.println("</div>");
-      out.println("</footer>");
-      out.println("</div>");
-           
-      out.println("<script>");
-      out.println("function w3_open() {");
-      out.println("document.getElementById(\"mySidebar\").style.display = \"block\";}");
-      out.println("function w3_close() {");
-      out.println("document.getElementById(\"mySidebar\").style.display = \"none\";}");
-      out.println(" </script>");
-      out.println("</body>");
-      out.println("</html>");
-   } finally {
+      footer(out);
+      } finally {
       out.close();  //close the output writer
-   }
+      }
       
       
    }//end of doGet

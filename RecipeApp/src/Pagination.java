@@ -11,12 +11,13 @@
 
 import datamodel.Recipe;
 import util.UtilDB;  
+import util.Info;
  
 /**
  * Servlet implementation class Pagination
  */
 @WebServlet("/Pagination")
-public class Pagination extends HttpServlet {
+public class Pagination extends HttpServlet implements Info{
 	private static final long serialVersionUID = 1L;
 
         protected void doGet(HttpServletRequest request, HttpServletResponse response)   
@@ -79,7 +80,7 @@ public class Pagination extends HttpServlet {
             out.println("</div>");  
             
               
-              
+            footer(out);  
             out.close();  
         }  
       
