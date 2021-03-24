@@ -150,12 +150,48 @@ public class UtilDB {
    }
    
 
-   public static void createRecipes(String recipename, String recipedesc, String image, String amount1, String ingredient1, String prep1) {
+   public static void createRecipes(String recipename, String recipedesc, String image, 
+		   String amount1, String ingredient1, String prep1,
+		   String amount2, String ingredient2, String prep2, 
+		   String amount3, String ingredient3, String prep3,
+		   String amount4, String ingredient4, String prep4,
+		   String amount5, String ingredient5, String prep5, 
+		   String amount6, String ingredient6, String prep6, 
+		   String amount7, String ingredient7, String prep7,
+		   String amount8, String ingredient8, String prep8,
+		   String amount9, String ingredient9, String prep9,
+		   String amount10, String ingredient10, String prep10,
+		   String amount11, String ingredient11, String prep11, 
+		   String amount12, String ingredient12, String prep12, 
+		   String amount13, String ingredient13, String prep13,
+		   String amount14, String ingredient14, String prep14,
+		   String amount15, String ingredient15, String prep15, 
+		   String Instruction1, String Instruction2, String Instruction3, String Instruction4, String Instruction5, 
+		   String Instruction6, String Instruction7, String Instruction8, String Instruction9, String Instruction10,
+		   String Instruction11,String Instruction12,String Instruction13,String Instruction14,String Instruction15) {
       Session session = getSessionFactory().openSession();
       Transaction tx = null;
       try {
          tx = session.beginTransaction();
-         session.save(new Recipe(recipename, recipedesc, image, amount1, ingredient1, prep1));
+         session.save(new Recipe(recipename, recipedesc, image, 
+        		 amount1, ingredient1, prep1, 
+        		 amount2, ingredient2, prep2, 
+        		 amount3, ingredient3, prep3, 
+        		 amount4, ingredient4, prep4, 
+        		 amount5, ingredient5, prep5, 
+        		 amount6, ingredient6, prep6, 
+        		 amount7, ingredient7, prep7, 
+        		 amount8, ingredient8, prep8, 
+        		 amount9, ingredient9, prep9, 
+        		 amount10, ingredient10, prep10, 
+        		 amount11, ingredient11, prep11, 
+        		 amount12, ingredient12, prep12, 
+        		 amount13, ingredient13, prep13, 
+        		 amount14, ingredient14, prep14,
+    		     amount15, ingredient15, prep15,
+    		     Instruction1, Instruction2, Instruction3, Instruction4, Instruction5,
+    		     Instruction6, Instruction7, Instruction8, Instruction9, Instruction10,
+    		     Instruction11, Instruction12, Instruction13, Instruction14, Instruction15 ));
          tx.commit();
       } catch (HibernateException e) {
          if (tx != null)

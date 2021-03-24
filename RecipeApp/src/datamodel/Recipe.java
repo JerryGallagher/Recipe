@@ -302,6 +302,51 @@ public class Recipe {
 		    this.Prep1 = prep1;
 		   }
 	   
+	   public Recipe(String recipename, String recipedesc, String image, 
+			   String amount1, String ingredient1, String prep1,
+			   String amount2, String ingredient2, String prep2, 
+			   String amount3, String ingredient3, String prep3,
+			   String amount4, String ingredient4, String prep4,
+			   String amount5, String ingredient5, String prep5, 
+			   String amount6, String ingredient6, String prep6, 
+			   String amount7, String ingredient7, String prep7,
+			   String amount8, String ingredient8, String prep8,
+			   String amount9, String ingredient9, String prep9,
+			   String amount10, String ingredient10, String prep10,
+			   String amount11, String ingredient11, String prep11, 
+			   String amount12, String ingredient12, String prep12, 
+			   String amount13, String ingredient13, String prep13,
+			   String amount14, String ingredient14, String prep14,
+			   String amount15, String ingredient15, String prep15, 
+			   String Instruction1, String Instruction2, String Instruction3, String Instruction4, String Instruction5, 
+			   String Instruction6, String Instruction7, String Instruction8, String Instruction9, String Instruction10,
+			   String Instruction11,String Instruction12,String Instruction13,String Instruction14,String Instruction15) {
+		   	this.id = id;
+		    this.RecipeName = recipename;
+		    this.RecipeDesc = recipedesc;
+		    this.Image = image;
+		    this.Amount1 = amount1;this.Ingredient1 = ingredient1;this.Prep1 = prep1;
+		    this.Amount2 = amount2;this.Ingredient2 = ingredient2;this.Prep2 = prep2;
+		    this.Amount3 = amount3;this.Ingredient3 = ingredient3;this.Prep3 = prep3;
+		    this.Amount4 = amount4;this.Ingredient4 = ingredient4;this.Prep4 = prep4;
+		    this.Amount5 = amount5;this.Ingredient5 = ingredient5;this.Prep5 = prep5;
+		    this.Amount6 = amount6;this.Ingredient6 = ingredient6;this.Prep6 = prep6;
+		    this.Amount7 = amount7;this.Ingredient7 = ingredient7;this.Prep7 = prep7;
+		    this.Amount8 = amount8;this.Ingredient8 = ingredient8;this.Prep8 = prep8;
+		    this.Amount9 = amount9;this.Ingredient9 = ingredient9;this.Prep9 = prep9;
+		    this.Amount10 = amount10;this.Ingredient10 = ingredient10;this.Prep10 = prep10;
+		    this.Amount11 = amount11;this.Ingredient11 = ingredient11;this.Prep11 = prep11;
+		    this.Amount12 = amount12;this.Ingredient12 = ingredient12;this.Prep12 = prep12;
+		    this.Amount13 = amount13;this.Ingredient13 = ingredient13;this.Prep13 = prep13;
+		    this.Amount14 = amount14;this.Ingredient14 = ingredient14;this.Prep14 = prep14;
+		    this.Amount15 = amount15;this.Ingredient15 = ingredient15;this.Prep15 = prep15;
+		    this.Instruction1 = Instruction1; this.Instruction2 = Instruction2; this.Instruction3 = Instruction3;
+		    this.Instruction4 = Instruction4; this.Instruction5 = Instruction5; this.Instruction6 = Instruction6;
+		    this.Instruction7 = Instruction7; this.Instruction8 = Instruction8; this.Instruction9 = Instruction9; 
+		    this.Instruction10 = Instruction10; this.Instruction11 = Instruction11; this.Instruction12 = Instruction12;
+		    this.Instruction13 = Instruction13; this.Instruction14 = Instruction14; this.Instruction15 = Instruction15;
+		   }
+	   
 	   public String getRecipeName() {
 		      return RecipeName;
 		   }
